@@ -1,5 +1,5 @@
-const { LineBot } = require('Bottender');
-const { createServer } = require('Bottender/express');
+const { LineBot } = require('bottender');
+const { createServer } = require('bottender/express');
 const { Line } = require('messaging-api-line');
 
 const bot = new LineBot({
