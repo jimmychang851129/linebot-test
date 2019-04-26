@@ -21,7 +21,7 @@ const isIntroduction = context => {
 }
 
 const SendIntroList = context => {
-    context.pushTemplate('if the list is not shown, please try cellphone or other devices', {
+    context.pushTemplate('if the list is not shown, please update your line to LINE 6.7.0 or later version', {
     type: 'buttons',
     thumbnailImageUrl: 'https://www.csie.ntu.edu.tw/~b04902092/linebot/engineer.jpg',
     imageSize: 'contain',
@@ -52,6 +52,7 @@ const SendIntroList = context => {
   });
 }
 
+// handler that receive all events and distribute it to handler that is in charge
 module.exports = new LineHandler()
   .onText(context =>{
     handleText.echoText(context)

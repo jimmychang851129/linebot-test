@@ -8,13 +8,15 @@ const fs = require('fs')
 const textDIR = "./handler/response/"
 
 const isSelfIntro = context => {
-  console.log("in selfintro context = ",context)
   const {event} = context
-  if (event.postback.query.req && event.postback.query.req === 'selfintro') return true
+  if (event.postback.query.req && event.postback.query.req === 'selfintro'){ 
+        console.log("user : ",context.session.user.id,", request: postback, query: ",event.postback.query," info : ",event)
+    return true
+  }
   return false
 }
 
-// unfinished
+// send introduction message to client
 const handleSelfIntro = context => { 
   data = fs.readFileSync(textDIR+'selfintro.txt')
   context.replyText(data.toString())
@@ -22,11 +24,14 @@ const handleSelfIntro = context => {
 
 const isStrength = context => {
   const {event} = context
-  if (event.postback.query.req && event.postback.query.req === 'strength') return true
+  if (event.postback.query.req && event.postback.query.req === 'strength'){ 
+     console.log("user : ",context.session.user.id,", request: postback, query: ",event.postback.query," info : ",event)
+    return true
+  }
   return false
 }
 
-// unfinished
+// send strength message to user
 const handleStrength = context => {
   data = fs.readFileSync(textDIR+'strength.txt')
   console.log("data = ",data)
@@ -35,28 +40,35 @@ const handleStrength = context => {
 
 const isProject = context => {
   const {event} = context
-  if (event.postback.query.req && event.postback.query.req === 'project') return true
+  if (event.postback.query.req && event.postback.query.req === 'project'){
+     console.log("user : ",context.session.user.id,", request: postback, query: ",event.postback.query," info : ",event)
+      return true
+  }
   return false
 }
 
-// unfinished
+// send project message to user
 const handleProject = context => {
   data = fs.readFileSync(textDIR+'project.txt')
-  console.log("data = ",data)
   context.replyText(data.toString())
 }
 
 const isMotivation = context =>{
   const {event} = context
-  if(event.postback.query.req && event.postback.query.req == 'motivation') return true
+  if(event.postback.query.req && event.postback.query.req == 'motivation'){ 
+   console.log("user : ",context.session.user.id,", request: postback, query: ",event.postback.query," info : ",event)
+    return true
+  }
   return false
 }
 
+// send motivation message to user
 const handleMotivation = context =>{
   var data = fs.readFileSync(textDIR+'motivation.txt')
   context.replyText(data.toString())
 }
 
+// create a handler to handle introduction event
 module.exports = new LineHandler()
   .on(isSelfIntro,handleSelfIntro)
   .on(isStrength, handleStrength)

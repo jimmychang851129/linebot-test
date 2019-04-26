@@ -7,9 +7,10 @@ exports.echoText = async context =>{
   	// b = 0x100079
     // await context.replyText("你說 : "+context.event.message.text)
     // await context.replyText('\u0010\u0000y')
+    // send the template message when the text is 自我介紹
     const data = context.event.message.text;
     if("自我介紹".includes(data)){
-      context.pushTemplate('if the list is not shown, please try cellphone or other devices', {
+      context.pushTemplate('if the list is not shown, please update your line to LINE 6.7.0 or later version', {
         type: 'buttons',
         thumbnailImageUrl: 'https://www.csie.ntu.edu.tw/~b04902092/linebot/engineer.jpg',
         imageSize: 'contain',
@@ -39,9 +40,11 @@ exports.echoText = async context =>{
         ],
       });
     }
+    // send the ppt if the text contains LineBot的誕生
     else if("LineBot的誕生".includes(data)){
-      context.replyText("此專案的說明 : https://docs.google.com/presentation/d/1XgtoTHs8kF7j4k--2hfNxq3dgHDU_t8tI_hsIeHOgAA/edit?usp=sharing")
+      context.replyText("此專案的說明 : https://www.csie.ntu.edu.tw/~b04902092/linebot/LineBotBorn.pdf")
     }
+    // not yet handle Orz
     else{
       context.replyText("工程師耍廢中，還沒建造其他功能，抱歉QQ")
     }

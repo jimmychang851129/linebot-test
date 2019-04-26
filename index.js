@@ -12,8 +12,10 @@ const bot = new LineBot({
 // LISTEN TO ALL THE EVENT
 bot.onEvent(handler);
 
+
+// Create Server
 const server = createServer(bot);
-  
+
 server.listen(process.env.PORT||3000, () => {
   console.log('server is running on 3000 port...');
 });
