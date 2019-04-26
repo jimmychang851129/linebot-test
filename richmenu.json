@@ -1,62 +1,35 @@
+//richmenu-dde5aa32ea21f95e75c88d0d319fd455
 {
     "size": {
-      "width": 2500,
-      "height": 1686
+      "width": 800,
+      "height": 270
     },
     "selected": true,
     "name": "可以問我以下問題喔><",
-    "chatBarText": "查看更多",
+    "chatBarText": "功能列表",
     "areas": [
       {
         "bounds": {
-          "x": 8,
-          "y": 80,
-          "width": 539,
-          "height": 686
+          "x": 0,
+          "y": 0,
+          "width": 400,
+          "height": 270
         },
         "action": {
-          "type": "postback",
-          "text": "自我介紹",
-          "data": "flowtype=intro&req=selfintro"
+          "type": "message",
+          "text": "自我介紹"
         }
       },
       {
         "bounds": {
-          "x": 652,
-          "y": 80,
-          "width": 560,
-          "height": 686
+          "x": 400,
+          "y": 0,
+          "width": 400,
+          "height": 270
         },
         "action": {
-          "type": "postback",
-          "text": "擅長領域",
-          "data": "flowtype=intro&req=strength"
-        }
-      },
-      {
-        "bounds": {
-          "x": 1302,
-          "y": 80,
-          "width": 520,
-          "height": 682
-        },
-        "action": {
-          "type": "postback",
-          "text": "做過專案",
-          "data": "flowtype=intro&req=project"
-        }
-      },
-      {
-        "bounds": {
-          "x": 1902,
-          "y": 80,
-          "width": 556,
-          "height": 676
-        },
-        "action": {
-          "type": "postback",
-          "text": "為何申請Line",
-          "data": "flowtype=intro&req=motivation"
+          "type": "message",
+          "text": "LineBot的誕生"
         }
       }
    ]

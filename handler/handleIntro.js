@@ -5,6 +5,8 @@
 
 const { LineHandler } = require('bottender')
 const fs = require('fs')
+const textDIR = "./handler/response/"
+
 const isSelfIntro = context => {
   console.log("in selfintro context = ",context)
   const {event} = context
@@ -14,7 +16,7 @@ const isSelfIntro = context => {
 
 // unfinished
 const handleSelfIntro = context => { 
-  data = fs.readFileSync('./handler/selfintro.txt')
+  data = fs.readFileSync(textDIR+'selfintro.txt')
   context.replyText(data.toString())
 }
 
@@ -26,7 +28,7 @@ const isStrength = context => {
 
 // unfinished
 const handleStrength = context => {
-  data = fs.readFileSync('./handler/strength.txt')
+  data = fs.readFileSync(textDIR+'strength.txt')
   console.log("data = ",data)
   context.replyText(data.toString())
 }
@@ -39,7 +41,7 @@ const isProject = context => {
 
 // unfinished
 const handleProject = context => {
-  data = fs.readFileSync('./handler/project.txt')
+  data = fs.readFileSync(textDIR+'project.txt')
   console.log("data = ",data)
   context.replyText(data.toString())
 }
@@ -51,7 +53,7 @@ const isMotivation = context =>{
 }
 
 const handleMotivation = context =>{
-  var data = fs.readFileSync('./handler/motivation.txt')
+  var data = fs.readFileSync(textDIR+'motivation.txt')
   context.replyText(data.toString())
 }
 

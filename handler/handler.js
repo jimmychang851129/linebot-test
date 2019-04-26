@@ -8,7 +8,6 @@ const handleIntroduction = require('./handleIntro.js')
 var handleText = require('./handleText.js')
 
 const isIntroduction = context => {
-  console.log("in introduction")
   const {event} = context
   if (event.isPostback) {
       console.log('postback:',JSON.stringify(event.postback))
