@@ -1,3 +1,3 @@
 #!/bin/bash
 docker stop roselia
-docker remove roselia
+docker rm roselia
