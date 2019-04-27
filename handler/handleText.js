@@ -3,7 +3,7 @@
   */
 
 const { LineHandler } = require('bottender')
-exports.echoText = async context =>{
+exports.resText = async context =>{
   	// b = 0x100079
     // await context.replyText("你說 : "+context.event.message.text)
     // await context.replyText('\u0010\u0000y')

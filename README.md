@@ -62,6 +62,10 @@ Structure of this project is provided in [here](https://www.csie.ntu.edu.tw/~b04
 
     Handle message-related events and send corresponding response to the client
 
+- **handler/handleSticker.js**
+
+	Handle Sticker-related events and send corresponding response to the client
+
 - **richmenu.json**
 
     my richmenu, you can create it by sending post request to the Line platform, [here is the document](https://developers.line.biz/en/docs/messaging-api/using-rich-menus/#create-a-rich-menu)
@@ -82,9 +86,7 @@ To add a new handler to a new event, just register the handler in handler.js and
 Store all the requests information. Not only can it make debug easier but detect malicious user as well.
 
 ## Future work
-
 1. Docker
 2. Heroku MongoDB
 3. other feature?
-
-
+4. test

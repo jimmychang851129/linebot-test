@@ -10,7 +10,6 @@ const textDIR = "./handler/response/"
 const isSelfIntro = context => {
   const {event} = context
   if (event.postback.query.req && event.postback.query.req === 'selfintro'){ 
-        console.log("user : ",context.session.user.id,", request: postback, query: ",event.postback.query," info : ",event)
     return true
   }
   return false
@@ -25,7 +24,6 @@ const handleSelfIntro = context => {
 const isStrength = context => {
   const {event} = context
   if (event.postback.query.req && event.postback.query.req === 'strength'){ 
-     console.log("user : ",context.session.user.id,", request: postback, query: ",event.postback.query," info : ",event)
     return true
   }
   return false
@@ -34,14 +32,12 @@ const isStrength = context => {
 // send strength message to user
 const handleStrength = context => {
   data = fs.readFileSync(textDIR+'strength.txt')
-  console.log("data = ",data)
   context.replyText(data.toString())
 }
 
 const isProject = context => {
   const {event} = context
   if (event.postback.query.req && event.postback.query.req === 'project'){
-     console.log("user : ",context.session.user.id,", request: postback, query: ",event.postback.query," info : ",event)
       return true
   }
   return false
@@ -56,7 +52,6 @@ const handleProject = context => {
 const isMotivation = context =>{
   const {event} = context
   if(event.postback.query.req && event.postback.query.req == 'motivation'){ 
-   console.log("user : ",context.session.user.id,", request: postback, query: ",event.postback.query," info : ",event)
     return true
   }
   return false

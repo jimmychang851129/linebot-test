@@ -6,21 +6,29 @@ const { LineHandler } = require('bottender')
 const queryString = require('query-string')
 const handleIntroduction = require('./handleIntro.js')
 var handleText = require('./handleText.js')
+var handleSticker = require('./handleSticker.js')
 
 const isIntroduction = context => {
-  const {event} = context
+  const {event,session} = context
   if (event.isPostback) {
-      console.log('postback:',JSON.stringify(event.postback))
       event.postback['query'] = queryString.parse(event.postback.data)
-      console.log('postback.query:', event.postback.query)
     if (event.postback.query && event.postback.query.flowtype === 'intro'){
+      console.log("user : ",session,", request: postback, query: ",event.postback.query," info : ",event)
       return true
     }
   }
   return false
 }
 
+const isSticker = context =>{
+  const {event,session} = context
+  console.log("user : ",session,", request: Sticker, info : ",event)
+  return event.isSticker
+}
+
 const SendIntroList = context => {
+    const {event,session} = context
+    console.log("user : ",session,", request: follow, info : ",event)
     context.pushTemplate('if the list is not shown, please update your line to LINE 6.7.0 or later version', {
     type: 'buttons',
     thumbnailImageUrl: 'https://www.csie.ntu.edu.tw/~b04902092/linebot/engineer.jpg',
@@ -55,10 +63,15 @@ const SendIntroList = context => {
 // handler that receive all events and distribute it to handler that is in charge
 module.exports = new LineHandler()
   .onText(context =>{
-    handleText.echoText(context)
+    const {event,session} = context
+    console.log("user : ",session,", request: Text, info : ",event)
+    handleText.resText(context)
+  })
+  .on(isSticker,context =>{
+    handleSticker.resSticker(context)
   })
   .onFollow(SendIntroList)
-  .on(isIntroduction,handleIntroduction)  // not yet test
+  .on(isIntroduction,handleIntroduction)
   .onEvent(context => {
     console.log('Uncaught event:', context.event.rawEvent)
   })
