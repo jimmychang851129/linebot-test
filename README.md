@@ -11,9 +11,13 @@ you can interact with this linebot by scanning the below QRcode
 ## Enviornment
 
 Nodejs == 8.11.3
+
 bottender: ^0.15.17
+
 express: 4.16.4
+
 linebot: 1.4.1
+
 messaging-api-line": ^0.7.15
 
 ## Installation
