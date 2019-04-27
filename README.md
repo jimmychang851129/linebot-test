@@ -22,21 +22,18 @@ messaging-api-line": ^0.7.15
 
 ## Installation
 
-### method 1
+### method 1 : heroku
 
 1. Register a Line developer account, create a channel, and access the token and channel secret
 
-2. Install Nodejs and npm first
-
-3. execute following command
+2. execute following command
 
 ```
 $ git clone https://github.com/jimmychang851129/linebot-test.git
 $ cd linebot-test/
-$ npm i
 $ touch .env
 $ Regsiter a channel(step 1) and write token and secret into .env file
-$ node index.js > user.log     // save the output to user.log
+$ run heroku in step3
 // the server will occupy port 3000 or process.env.PORT
 ```
 
@@ -47,9 +44,8 @@ Channel_token= '<your channel token>'
 Channel_secret='<your channel secret>'
 ```
 
-4. deploy code to heroku or run ngrok to obtain https url
+3. deploy code to heroku or run ngrok to obtain https url
     - if deployed to heroku, follow instruction from this [link](https://hackmd.io/p4cSSIgIS8irYGHuZkd-AA)
-    - if getting url from ngrok, then execute server at localhost with the command : **npm start**, FYI, you just have to run **./ngrok http 3000** to get https url
 
 ```
 Since Line platform only supports webhooks which are accessible through
@@ -59,12 +55,14 @@ url. Paste this url to Line Channel webpage, to be more specific, webhook
 field.
 ```
 
-5. After obtain https url from step 3. Copy the url and paste it to the webhook field on line developer webpage
+4. After obtain https url from step 3. Copy the url and paste it to the webhook field on line developer webpage
+
+5. create a richmenu through postman, sorry for the inconvenience Orz
 
 ### method2 : Docker + ngrok
 
-1. Same as above, register an account and acquire a channel and its secret and token
-2. install Docker
+1. Same as above, register an account and acquire a channel, its secret, and token
+2. install Docker, ngrok
 3. run following command
 
 ```
@@ -78,13 +76,24 @@ by default connect to localhost through port 3000)
 In run.sh you can decide which port to connect to container
 Just make sure you assign the same port to both container and ngrok
 
-To stop and remove the container
+Stop and remove the container
 $ ./clean.sh
 
-To remove the image
+Remove the image
 $ /remove.sh
 ```
+
 4. Paste the webhook obtained from ngrok to the webhook field in channel management webpage
+
+5. Same as method1, post request to line API to create rich menu, Sorry for inconvenience
+
+6. FYI, to perceive the container, you can type following commands
+
+```
+$ docker exec -it roselia sh  // login to the container
+$ docker logs roselia // see log output of the container
+roselia is the name of the container, which is also my favorite band
+```
 
 ## Code Structure
 
