@@ -18,18 +18,24 @@ messaging-api-line": ^0.7.15
 
 ## Installation
 
-1. Register a Line developer account and create a channel
+### method 1
+
+1. Register a Line developer account, create a channel, and access the token and channel secret
 
 2. Install Nodejs and npm first
+
+3. execute following command
 
 ```
 $ git clone https://github.com/jimmychang851129/linebot-test.git
 $ cd linebot-test/
 $ npm i
 $ touch .env
-$ Regsiter a channel and write token and secret into .env file
+$ Regsiter a channel(step 1) and write token and secret into .env file
 $ node index.js > user.log     // save the output to user.log
+// the server will occupy port 3000 or process.env.PORT
 ```
+
 Sample .env file
 
 ```
@@ -37,10 +43,44 @@ Channel_token= '<your channel token>'
 Channel_secret='<your channel secret>'
 ```
 
-3. heroku or ngrok to obtain https url
+4. deploy code to heroku or run ngrok to obtain https url
+    - if deployed to heroku, follow instruction from this [link](https://hackmd.io/p4cSSIgIS8irYGHuZkd-AA)
+    - if getting url from ngrok, then execute server at localhost with the command : **npm start**, FYI, you just have to run **./ngrok http 3000** to get https url
 
-Since Line platform only supports webhooks which are accessible through https, ngrok or heroku is required to provide a https access to our server.
-you can either operate your server with ngrok or heroku to acquire a https url. Paste this url to Line Channel webpage, to be more specific, webhook field.
+```
+Since Line platform only supports webhooks which are accessible through
+https, ngrok or heroku provides https access to our server.
+you can either operate your server with ngrok or heroku to acquire a https
+url. Paste this url to Line Channel webpage, to be more specific, webhook
+field.
+```
+
+5. After obtain https url from step 3. Copy the url and paste it to the webhook field on line developer webpage
+
+### method2 : Docker + ngrok
+
+1. Same as above, register an account and acquire a channel and its secret and token
+2. install Docker
+3. run following command
+
+```
+$ git clone https://github.com/jimmychang851129/linebot-test.git
+$ cd linebot-test/
+$ create a .env file same as method1, paste the secret and token to the .env file
+$ ./setup.sh             // create image
+$ ./run.sh               // run container
+$ ./ngrok http 3000     //connect port 3000 to ngrok server(since our container
+by default connect to localhost through port 3000)
+In run.sh you can decide which port to connect to container
+Just make sure you assign the same port to both container and ngrok
+
+To stop and remove the container
+$ ./clean.sh
+
+To remove the image
+$ /remove.sh
+```
+4. Paste the webhook obtained from ngrok to the webhook field in channel management webpage
 
 ## Code Structure
 
@@ -72,11 +112,9 @@ Structure of this project is provided in [here](https://www.csie.ntu.edu.tw/~b04
 
 ## Feature
 
-### Event-driven programming
+### High scalability
 
-Every button pushed or every message sent are events, and events are handled by code. For me, I think this is the way line bot works: perceving all the actions as events and assigned them to handlers.
-
-### high scalability
+I think event driven programming is best suitted for linebot, so every message sent or button pushed is an event and can be handled by specific handler.
 
 Code structure is simple. handler.js handle all the event and forward to specific handler.
 To add a new handler to a new event, just register the handler in handler.js and create a new file running this new handler
@@ -85,8 +123,11 @@ To add a new handler to a new event, just register the handler in handler.js and
 
 Store all the requests information. Not only can it make debug easier but detect malicious user as well.
 
+### User friendly UI
+
+Adopted richmenu and template message to help user make request to back-end server, so every request can be handled correctly
+
 ## Future work
-1. Docker
-2. Heroku MongoDB
+1. Heroku MongoDB
+2. test
 3. other feature?
-4. test
