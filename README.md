@@ -142,7 +142,7 @@ I think event driven programming is best suitted for linebot, so every message s
 Code structure is simple. handler.js handle all the event and forward to specific handler.
 To add a new handler to a new event, just register the handler in handler.js and create a new file running this new handler
 
-### Users' requests 
+### Users' requests storage
 
 Store all the requests information. Not only can it make debug easier but detect malicious user as well.
 
