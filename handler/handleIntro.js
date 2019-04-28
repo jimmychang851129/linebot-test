@@ -16,9 +16,14 @@ const isSelfIntro = context => {
 }
 
 // send introduction message to client
-const handleSelfIntro = context => { 
+const handleSelfIntro = async context => { 
   data = fs.readFileSync(textDIR+'selfintro.txt')
-  context.replyText(data.toString())
+  try{
+    await context.replyText(data.toString())
+  }
+  catch(error){
+    console.log("handleIntro.js-> handleSelfIntro error, error = ",error)
+  }
 }
 
 const isStrength = context => {
@@ -30,9 +35,14 @@ const isStrength = context => {
 }
 
 // send strength message to user
-const handleStrength = context => {
+const handleStrength = async context => {
   data = fs.readFileSync(textDIR+'strength.txt')
-  context.replyText(data.toString())
+  try{
+    await context.replyText(data.toString())
+  }
+  catch(error){
+    console.log("handleIntro.js-> handleStrength error, error = ",error)
+  }
 }
 
 const isProject = context => {
@@ -44,9 +54,14 @@ const isProject = context => {
 }
 
 // send project message to user
-const handleProject = context => {
+const handleProject = async context => {
   data = fs.readFileSync(textDIR+'project.txt')
-  context.replyText(data.toString())
+  try{  
+    await context.replyText(data.toString())
+  }
+  catch(error){
+    console.log("handleIntro.js-> handleProject error, error = ",error)
+  }
 }
 
 const isMotivation = context =>{
@@ -58,9 +73,14 @@ const isMotivation = context =>{
 }
 
 // send motivation message to user
-const handleMotivation = context =>{
+const handleMotivation = async context =>{
   var data = fs.readFileSync(textDIR+'motivation.txt')
-  context.replyText(data.toString())
+  try{
+    await context.replyText(data.toString())
+  }
+  catch(error){
+    console.log("handleIntro.js-> handleMotivation error, error = ",error)
+  }
 }
 
 // create a handler to handle introduction event

@@ -1,0 +1,124 @@
+{
+	{	
+		"name": "Line ReachMenu Construct",	// create richmenu
+		"request": {
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "<your bearer token>",	// key in your channel token
+						"type": "string"
+					}
+				]
+			},
+			"method": "POST",
+			"header": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"type": "text"
+				}
+			],
+			"body": {
+				"mode": "raw",
+				"raw": "{\n    \"size\": {\n      \"width\": 800,\n      \"height\": 270\n    },\n    \"selected\": true,\n    \"name\": \"可以問我以下問題喔><\",\n    \"chatBarText\": \"功能列表\",\n    \"areas\": [\n      {\n        \"bounds\": {\n          \"x\": 0,\n          \"y\": 0,\n          \"width\": 400,\n          \"height\": 270\n        },\n        \"action\": {\n          \"type\": \"message\",\n          \"text\": \"自我介紹\"\n        }\n      },\n      {\n        \"bounds\": {\n          \"x\": 400,\n          \"y\": 0,\n          \"width\": 400,\n          \"height\": 270\n        },\n        \"action\": {\n          \"type\": \"message\",\n          \"text\": \"LineBot的誕生\"\n        }\n      }\n   ]\n}"
+			},
+			"url": {
+				"raw": "https://api.line.me/v2/bot/richmenu",
+				"protocol": "https",
+				"host": [
+					"api",
+					"line",
+					"me"
+				],
+				"path": [
+					"v2",
+					"bot",
+					"richmenu"
+				]
+			}
+		},
+	},
+	{
+		"name": "ReachMenu image upload",
+		"request": {
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "<your token>",	//place your token here
+						"type": "string"
+					}
+				]
+			},
+			"method": "POST",
+			"header": [
+				{
+					"key": "Content-Type",
+					"value": "image/png",
+					"type": "text"
+				}
+			],
+			"body": {
+				"mode": "file",
+				"file": {}		// place your image file here
+			},
+			"url": {
+				"raw": "https://api.line.me/v2/bot/richmenu/< your richmenu-ID>/content", //place your richmenu-ID here
+				"protocol": "https",
+				"host": [
+					"api",
+					"line",
+					"me"
+				],
+				"path": [
+					"v2",
+					"bot",
+					"richmenu",
+					"<your richmenu id>",	//place your richmenu-ID here
+					"content"
+				]
+			}
+		}
+	},
+	{
+		"name": "set default richmenu",		// set this richmenu to default for all user
+		"request": {
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "<your token>",	//place your token here 
+						"type": "string"
+					}
+				]
+			},
+			"method": "POST",
+			"header": [],
+			"body": {
+				"mode": "raw",
+				"raw": ""
+			},
+			"url": {
+				"raw": "https://api.line.me/v2/bot/user/all/richmenu/<your richmenuID>",	//place your richmenuID here
+				"protocol": "https",
+				"host": [
+					"api",
+					"line",
+					"me"
+				],
+				"path": [
+					"v2",
+					"bot",
+					"user",
+					"all",
+					"richmenu",
+					"<your richmenuID>"	//place your richmenuID here
+				]
+			}
+		},
+	}
+}

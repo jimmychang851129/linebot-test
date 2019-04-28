@@ -4,9 +4,15 @@
 
 you can interact with this linebot by scanning the below QRcode
 
-![](https://i.imgur.com/8l9u1KW.png)
+![](https://i.imgur.com/8l9u1KWm.png)
 
 ## Example
+
+
+![](https://i.imgur.com/J5JrLiam.png)
+
+![](https://i.imgur.com/eltA2kom.png)
+
 
 ## Enviornment
 
@@ -57,7 +63,7 @@ field.
 
 4. After obtain https url from step 3. Copy the url and paste it to the webhook field on line developer webpage
 
-5. create a richmenu through postman, sorry for the inconvenience Orz
+5. create a richmenu through postman, sorry for the inconvenience Orz. The image used is image/2.png, and the richmenu.json file is the richmenu format used. **richmenu_postrequest.json** provides sample post request to Line platform to create richmenu.
 
 ### method2 : Docker + ngrok
 
@@ -85,7 +91,7 @@ $ /remove.sh
 
 4. Paste the webhook obtained from ngrok to the webhook field in channel management webpage
 
-5. Same as method1, post request to line API to create rich menu, Sorry for inconvenience
+5. create a richmenu through postman, sorry for the inconvenience Orz. The image used is image/2.png, and the richmenu.json file is the richmenu format used. **richmenu_postrequest.json** provides sample post request to Line platform to create richmenu.
 
 6. FYI, to perceive the container, you can type following commands
 
@@ -123,6 +129,10 @@ Structure of this project is provided in [here](https://www.csie.ntu.edu.tw/~b04
 
     my richmenu, you can create it by sending post request to the Line platform, [here is the document](https://developers.line.biz/en/docs/messaging-api/using-rich-menus/#create-a-rich-menu)
 
+- **richmenu_postrequest.json**
+
+    Sample post request used to create richmenu, this file is exported from Postman.
+
 ## Feature
 
 ### High scalability
@@ -139,6 +149,10 @@ Store all the requests information. Not only can it make debug easier but detect
 ### User friendly UI
 
 Adopted richmenu and template message to help user make request to back-end server, so every request can be handled correctly
+
+### Error handling
+
+Using try, catch to identify where the error is, especially in responsing to Line platform. I place try, catch block in every response to the Line platform to help finding errors.
 
 ## Future work
 1. Heroku MongoDB

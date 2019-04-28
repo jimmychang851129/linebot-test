@@ -26,38 +26,43 @@ const isSticker = context =>{
   return event.isSticker
 }
 
-const SendIntroList = context => {
+const SendIntroList = async context => {
     const {event,session} = context
     console.log("user : ",session,", request: follow, info : ",event)
-    context.pushTemplate('if the list is not shown, please update your line to LINE 6.7.0 or later version', {
-    type: 'buttons',
-    thumbnailImageUrl: 'https://www.csie.ntu.edu.tw/~b04902092/linebot/engineer.jpg',
-    imageSize: 'contain',
-    title: '個人簡介',
-    text: '可以問我以下問題><',
-    actions: [
-      {
-        type: 'postback',
-        label: '自我介紹',
-        data: 'flowtype=intro&req=selfintro',
-      },
-      {
-        type: 'postback',
-        label: '擅長領域',
-        data: 'flowtype=intro&req=strength',
-      },
-      {
-        type: 'postback',
-        label: '做過專案',
-        data: 'flowtype=intro&req=project',
-      },
-      {
-        type: 'postback',
-        label: '為何申請Line',
-        data: 'flowtype=intro&req=motivation',
-      },
-    ],
-  });
+    try{
+      await context.pushTemplate('if the list is not shown, please update your line to LINE 6.7.0 or later version', {
+      type: 'buttons',
+      thumbnailImageUrl: 'https://www.csie.ntu.edu.tw/~b04902092/linebot/engineer.jpg',
+      imageSize: 'contain',
+      title: '個人簡介',
+      text: '可以問我以下問題><',
+      actions: [
+        {
+          type: 'postback',
+          label: '自我介紹',
+          data: 'flowtype=intro&req=selfintro',
+        },
+        {
+          type: 'postback',
+          label: '擅長領域',
+          data: 'flowtype=intro&req=strength',
+        },
+        {
+          type: 'postback',
+          label: '做過專案',
+          data: 'flowtype=intro&req=project',
+        },
+        {
+          type: 'postback',
+          label: '為何申請Line',
+          data: 'flowtype=intro&req=motivation',
+        },
+      ],
+    });
+  }
+  catch(error){
+    console.log("handler.js-> SendIntroList error, error = ",error)
+  }
 }
 
 // handler that receive all events and distribute it to handler that is in charge

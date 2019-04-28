@@ -18,5 +18,10 @@ exports.resSticker = async context =>{
 		packageId: LinepackageID,
 		stickerId: LineStickerList[RandomSticker(0,4)]
 	}
-	context.replySticker(sticker);
+	try{
+		await context.replySticker(sticker);
+	}
+	catch(error){
+		console.log("handleSticker.js-> resSticker error, error = ",error)
+	}
 }
