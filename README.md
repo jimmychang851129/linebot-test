@@ -86,7 +86,7 @@ Stop and remove the container
 $ ./clean.sh
 
 Remove the image
-$ /remove.sh
+$ ./remove.sh
 ```
 
 4. Paste the webhook obtained from ngrok to the webhook field in channel management webpage
