@@ -4,7 +4,8 @@
 
 you can interact with this linebot by scanning the below QRcode
 
-![](https://i.imgur.com/8l9u1KWm.png)
+<!-- ![](https://i.imgur.com/8l9u1KWm.png) -->
+![](botlicon.png)
 
 > updated : enabled group chatting
 ## Example
