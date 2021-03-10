@@ -2,6 +2,7 @@
  * Receive all the events and distribute these events to a specific handler
  * can be thought as a center receiving events and distributing them to a specific handler
  */
+
 const { LineHandler } = require('bottender')
 const queryString = require('query-string')
 const handleIntroduction = require('./handleIntro.js')
@@ -30,31 +31,31 @@ const SendIntroList = async context => {
     const {event,session} = context
     console.log("user : ",session,", request: follow, info : ",event)
     try{
-      await context.pushTemplate('if the list is not shown, please update your line to LINE 6.7.0 or later version', {
+      await context.pushTemplate('The flux message can only be shown in mobile phone, please use your smart phone instead. Sorry for the inconvenience', {
       type: 'buttons',
       thumbnailImageUrl: 'https://www.csie.ntu.edu.tw/~b04902092/linebot/engineer.jpg',
       imageSize: 'contain',
-      title: '個人簡介',
-      text: '可以問我以下問題><',
+      title: 'Introduction',
+      text: 'Hello I am bot licon. You can ask me following questions.',
       actions: [
         {
           type: 'postback',
-          label: '自我介紹',
+          label: 'Self-intro',
           data: 'flowtype=intro&req=selfintro',
         },
         {
           type: 'postback',
-          label: '擅長領域',
+          label: 'Personality',
           data: 'flowtype=intro&req=strength',
         },
         {
           type: 'postback',
-          label: '做過專案',
+          label: 'Projects',
           data: 'flowtype=intro&req=project',
         },
         {
           type: 'postback',
-          label: '為何申請Line',
+          label: 'Why Line?',
           data: 'flowtype=intro&req=motivation',
         },
       ],
@@ -76,6 +77,7 @@ module.exports = new LineHandler()
     handleSticker.resSticker(context)
   })
   .onFollow(SendIntroList)
+  .onJoin(SendIntroList)
   .on(isIntroduction,handleIntroduction)
   .onEvent(context => {
     console.log('Uncaught event:', context.event.rawEvent)

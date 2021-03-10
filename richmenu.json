@@ -4,8 +4,8 @@
       "height": 270
     },
     "selected": true,
-    "name": "可以問我以下問題喔><",
-    "chatBarText": "功能列表",
+    "name": "You can ask me following questions",
+    "chatBarText": "Functions",
     "areas": [
       {
         "bounds": {
@@ -16,7 +16,7 @@
         },
         "action": {
           "type": "message",
-          "text": "自我介紹"
+          "text": "Self-Intro"
         }
       },
       {
@@ -28,7 +28,7 @@
         },
         "action": {
           "type": "message",
-          "text": "LineBot的誕生"
+          "text": "How LineBot is created"
         }
       }
    ]

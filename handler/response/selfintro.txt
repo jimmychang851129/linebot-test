@@ -1,16 +1,19 @@
-我是張均銘，現在是台大資工大四學生，也是網路安全實驗室的專題生
-今年九月會直升台大資工研究所繼續在網路安全實驗室的學習、研究
+Chun-Ming Chang (Jimmy) is currently a graduate student in both National Taiwan University and Waseda University. 
+His research interest is Network and Computer Security. He has joined a CTF(m1z0r3) team in Waseda University and is mostly focussing on reverse engineering and binary exploitation.
+He has also published a short paper and a poster in the Web Conference(WWW). Currently, he is working on learning-based network traffic analysis on Tor network.
 
-(1)我喜歡做有意義的事情，
-我非常享受做出一個有用的東西，並被他人認可的那種成就感。
-因此大學的暑假幾乎都有去實習，期許自己除了暑假不要耍廢外，也能夠做出有用的東西能夠真的被大家使用。
+# Academic Performance
 
-(2)我對於自我的要求很高
-好勝心強，很怕自己的實力落後別人，因此總是會讓自己去做有挑戰性的事情，也會把目標做到完美，從中增強自己的實力，包括修課、加入的實驗室或實習。也因此都有不錯的成果
-像是實習有真的做出一套有在用的系統 : 國網中心證書區塊鏈
-實驗室也很順利的有第一篇paper上Tier 1的Conference
+Jimmy is a passionate and highly motivated student. He is interested in all types of new things and always take part in all kinds of activities to enrich his life.
+For instance, he joined several internship program such as National High-performance Computing Center and Trend Micro (Both Taipei and Tokyo office).
+Besides, he also has several overseas experience including presenting his research in San Francisco and Hague, joining internship program in Tokyo, and joining double degree program in Waseda University.
 
-###### 以下跟軟體無關 ######
-另外，我也很喜歡球類運動，只要是有球的運動都喜歡XD
-也很喜歡唱日本ktv，所以之後希望能夠住在日本，這樣就能天天唱日本ktv了
-最喜歡的團體是Roselia，好聽，目標要把他所有專輯買下來。
+# Extracurricular Activities
+
+Aside from academic performance, Jimmy also participates in plenty of extracurricular activities such as joining badminton club, playing the harmonica, and many other clubs.
+
+# Personality and Summary
+
+In conclusion, he is a passionate, responsible, and devoted students. He always wants to try out new things to enrich his life and is eager to create things that can benefit the soceity.
+
+If you would like to find the menu (the flex message), simply type any words here. For example, "hello".

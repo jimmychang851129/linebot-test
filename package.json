@@ -1,7 +1,7 @@
 {
-  "name": "linebot-pretest",
+  "name": "linebot-pre-assessment",
   "version": "1.0.0",
-  "description": "pretest of line intern program",
+  "description": "pre-assessment of line intern program",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",

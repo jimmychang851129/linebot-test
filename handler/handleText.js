@@ -12,35 +12,44 @@ function RandomNum() {
 }
 
 exports.resText = async context =>{
-    // send the template message when the text is 自我介紹
+    // send the template message when the text includes intro
     const data = context.event.message.text;
-    if("自我介紹".includes(data)){
+    // send the ppt if the text contains LineBot的誕生
+    if(data.includes("How LineBot is created")){
       try{
-        await context.pushTemplate('if the list is not shown, please update your line to LINE 6.7.0 or later version', {
+        await context.replyText("Slides : https://www.csie.ntu.edu.tw/~b04902092/linebot/LineBotBorn.pdf")
+      }
+      catch(error){
+        console.log("handleText.js-> resText error(LineBot born), error = ",error)
+      }
+    }
+    else{
+      try{
+        await context.pushTemplate('The flux message can only be shown in mobile phone, please use your smart phone instead. Sorry for the inconvenience', {
           type: 'buttons',
           thumbnailImageUrl: 'https://www.csie.ntu.edu.tw/~b04902092/linebot/'+RandomNum(),
           imageSize: 'cover',
-          title: '個人簡介',
-          text: '可以問我以下問題><',
+          title: 'Introduction',
+          text: 'Hello I am bot licon. You can ask me following questions.',
           actions: [
             {
               type: 'postback',
-              label: '自我介紹',
+              label: 'Self-intro',
               data: 'flowtype=intro&req=selfintro',
             },
             {
               type: 'postback',
-              label: '擅長領域',
+              label: 'Personality',
               data: 'flowtype=intro&req=strength',
             },
             {
               type: 'postback',
-              label: '做過專案',
+              label: 'Projects',
               data: 'flowtype=intro&req=project',
             },
             {
               type: 'postback',
-              label: '為何申請Line',
+              label: 'Why Line?',
               data: 'flowtype=intro&req=motivation',
             },
           ],
@@ -48,24 +57,6 @@ exports.resText = async context =>{
       } 
       catch(error){
         console.log("handleText.js-> resText error, error = ",error)
-      }
-    }
-    // send the ppt if the text contains LineBot的誕生
-    else if("LineBot的誕生".includes(data)){
-      try{
-        await context.replyText("此專案的說明 : https://www.csie.ntu.edu.tw/~b04902092/linebot/LineBotBorn.pdf")
-      }
-      catch(error){
-        console.log("handleText.js-> resText error(LineBot born), error = ",error)
-      }
-    }
-    // not yet handle Orz
-    else{
-      try{
-        await context.replyText("工程師耍廢中，還沒建造其他功能，抱歉QQ")
-      }
-      catch(error){
-        console.log("handleText.js-> resText error(NLP), error = ",error)
       }
     }
 }

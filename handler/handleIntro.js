@@ -72,6 +72,23 @@ const isMotivation = context =>{
   return false
 }
 
+const isDev = context =>{
+  const {event} = context
+  if(event.postback.query.req && event.postback.query.req == 'dev'){
+    return true;
+  }
+  return false;
+}
+
+const handleDev = async context =>{
+  try{
+    await context.replyText("Slides : https://www.csie.ntu.edu.tw/~b04902092/linebot/LineBotBorn.pdf")
+  }
+  catch(error){
+    console.log("handleText.js-> resText error(LineBot born), error = ",error)
+  }
+}
+
 // send motivation message to user
 const handleMotivation = async context =>{
   var data = fs.readFileSync(textDIR+'motivation.txt')

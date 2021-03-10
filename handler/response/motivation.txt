@@ -1,10 +1,14 @@
-會希望能去Line有以下幾個原因
-(1) 能夠做有意義的事情
-根據之前暑期實習的經驗，其實還蠻喜歡這種討論、設計服務的架構，並且大家合作把它做出來的感覺。所以也希望能夠在這個暑假依樣嘗試在實習貢獻一己之力，能夠幫忙實作出有用的東西，讓使用者能夠有更方便的服務，並且希望這服務能讓台灣變得更好。
+Followings are the Reason why I choose Line Tech Fresh.
 
-(2) 增進自己的實力
-就如自我介紹所說，我好勝心強，為了不輸給別人，所以希望暑假能繼續精進自我，所以希望能夠在暑假實習來增強自己的能力
+1. Impacts
+Line app is widely used in several Asian countries and is widely used in Taiwan for communication, and I am looking for a chance to work on things that can really have positive impacts on the soceity.
+I believe joining Line internship program is one of the approach that I can really create useful things and make our society better.
 
-(3) 提早了解業界的模式
-因為已經大四而且之前主要都待在學術界，不論是實驗室或之前在國網中心的實習，並沒有機會真的到外商看看，所以希望能有這個機會看看大公司(尤其是外商)平常怎麼想、設計一個服務以及外商的工作模式。
-而之後研究所畢業也想要去外商工作(Line是其中之一XD)，所以提早了解這個模式讓之後畢業後更容易銜接業界的模式。
+2. Learning
+Though I have several internship or research experience, I haven't really have a chance to work on a large projects. 
+I believe that developing such a large projects may require knowledges that I have yet learned. Therefore, I would like to have a chance joining such kinds of projects and enhance my ability (either in programming or collbaroation).
+
+3. Company Culture
+As I am going to graduate in 2022, I hope to have the chance to work as an intern in my coveted companies. I would like to know more about the company's culture or how things work in industry.
+
+If you would like to find the menu (the flex message), simply type any words here. For example, "hello".
